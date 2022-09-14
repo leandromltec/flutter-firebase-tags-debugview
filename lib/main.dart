@@ -11,10 +11,9 @@ void main() async {
 
   runApp( MaterialApp(
       title: 'Firebase Tags Debug View (Get It)',
+      debugShowCheckedModeBanner: false,
       routes: _moduleManager.routes ,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      
       home: const HomePage()
     ));
 }
