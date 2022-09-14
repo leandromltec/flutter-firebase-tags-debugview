@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 class MasterPage extends StatefulWidget {
   final String titleAppBar;
@@ -14,15 +13,18 @@ class MasterPage extends StatefulWidget {
 class _MasterPageState extends State<MasterPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.titleAppBar),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Color(0xFFFF782A),
+            )),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text(widget.titleAppBar)),
-        body: widget.contentPage,
-      ),
+      body: widget.contentPage,
     );
   }
 }

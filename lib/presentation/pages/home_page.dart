@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_tags_debugivew/assets/routes.dart';
+
+import '../../strings/routes.dart';
 import 'master_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                 child: ElevatedButton(
                     onPressed: () =>
                         Navigator.of(context).pushNamed(Routes.productsPage),
-                    child: Text("Redirecionar")),
+                    child: const Text("Redirecionar")),
               )
             ],
           ),
