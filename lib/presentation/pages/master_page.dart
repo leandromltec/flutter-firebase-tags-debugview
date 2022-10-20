@@ -4,7 +4,7 @@ class MasterPage extends StatefulWidget {
   final String titleAppBar;
   final Widget contentPage;
 
-  MasterPage({required this.titleAppBar, required this.contentPage});
+  MasterPage({@required this.titleAppBar, @required this.contentPage});
 
   @override
   State<MasterPage> createState() => _MasterPageState();
