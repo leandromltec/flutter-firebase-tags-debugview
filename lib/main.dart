@@ -14,7 +14,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       routes: _moduleManager.routes ,
       
-      home: const HomePage()
+      home: HomePage()
     ));
 }
 

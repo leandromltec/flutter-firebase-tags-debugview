@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_tags_debugivew/presentation/widgets/product_item.dart';
 
+import '../../model/icon_menu_model.dart';
+import '../../model/product_model.dart';
 import 'icon_menu.dart';
 
-Widget listViewProducts() {
-  return ListView(
+Widget listViewMenuBrands(List<IconMenuModel> listItems) {
+  return ListView.builder(
     scrollDirection: Axis.horizontal,
-    shrinkWrap: true,
-    children: [
-     IconMenu(urlImageAssets: 'assets/images/logos/logo_nike.svg'),
-     IconMenu(urlImageAssets: 'assets/images/logos/logo_adidas.svg'),
-     IconMenu(urlImageAssets: 'assets/images/logos/logo_puma.svg'),
-     IconMenu(urlImageAssets: 'assets/images/logos/logo_under_armour.svg'),
-     IconMenu(urlImageAssets: 'assets/images/logos/logo_new_balance.svg')
-    ],
-  
-  );
+      shrinkWrap: true,
+      itemCount: listItems.length,
+      itemBuilder: (context, index) {
+        return IconMenu(iconMenu: listItems[index]);
+      });
+}
+
+
+Widget listViewTeste(List<ProductModel> listItemProducts) {
+  return ListView.builder(
+    scrollDirection: Axis.horizontal,
+      shrinkWrap: true,
+      itemCount: listItemProducts.length,
+      itemBuilder: (context, index) {
+         return ProductItem(product: listItemProducts[index]);
+        
+      });
 }

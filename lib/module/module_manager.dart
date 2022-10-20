@@ -5,7 +5,7 @@ import 'module_interface.dart';
 import 'module_manager_interface.dart';
 
 class ModuleManager implements ModuleManagerInterface {
-  late Map<String, WidgetBuilder> _routes;
+   Map<String, WidgetBuilder> _routes;
 
   ModuleManager() {
     _routes = {};

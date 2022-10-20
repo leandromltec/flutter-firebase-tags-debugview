@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class IconMenu extends StatefulWidget {
-  final String urlImageAssets;
+import '../../model/icon_menu_model.dart';
 
-  IconMenu({required this.urlImageAssets});
+class IconMenu extends StatefulWidget {
+  final IconMenuModel iconMenu;
+
+  IconMenu({@required this.iconMenu});
 
   @override
   State<IconMenu> createState() => _IconMenuState();
@@ -20,7 +22,7 @@ class _IconMenuState extends State<IconMenu> {
       child: InkWell(
         onTap: (){
           setState(() {
-            enabled = !enabled;
+          
           });
         },
         child: Container(
@@ -31,7 +33,7 @@ class _IconMenuState extends State<IconMenu> {
           width: 80,
           height: 70,
           
-          child: SvgPicture.asset(widget.urlImageAssets)
+          child: SvgPicture.asset(widget.iconMenu.urlImage)
         ),
       ),
     );

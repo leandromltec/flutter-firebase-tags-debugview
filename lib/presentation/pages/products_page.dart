@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/listview_icons.dart';
+import '../widgets/product_item.dart';
+import 'home_page_presenter.dart';
 import 'master_page.dart';
 
 class ProductsPage extends StatefulWidget {
-  const ProductsPage({Key? key}) : super(key: key);
+  final ProductsPagePresenter presenter;
+
+  ProductsPage({@required this.presenter});
 
   @override
   State<ProductsPage> createState() => _ProductsPageState();
@@ -12,18 +16,49 @@ class ProductsPage extends StatefulWidget {
 
 class _ProductsPageState extends State<ProductsPage> {
   @override
+  void initState() {
+    super.initState();
+    widget.presenter.init();
+    widget.presenter.getAllItemsMenu();
+    widget.presenter.getAllProducs();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    widget.presenter.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MasterPage(
-        titleAppBar: 'Produtos',
-        contentPage: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                  margin: const EdgeInsets.all(20),
-                  height: 70,
-                  child: listViewProducts()),
-            ],
-          ),
-        ));
+      titleAppBar: 'Produtos',
+      contentPage: SingleChildScrollView(
+        child: Column(
+          children: [
+            ValueListenableBuilder(
+                valueListenable: widget.presenter.listItemsMenu,
+                builder: (BuildContext context, list, _) {
+                  return Container(
+                      margin: const EdgeInsets.all(20),
+                      height: 70,
+                      child: listViewMenuBrands(list));
+                }),
+            ValueListenableBuilder(
+                valueListenable: widget.presenter.listCurrentItemsProducts,
+                builder: (BuildContext context, listCurrent, _) {
+                  return Container(
+                    child: listViewTeste(listCurrent),
+                    /*children: [
+                      ProductItem(
+                        product: widget.presenter.currentItem.value,
+                      ),
+                    ],*/
+                  );
+                }),
+          ],
+        ),
+      ),
+    );
   }
 }

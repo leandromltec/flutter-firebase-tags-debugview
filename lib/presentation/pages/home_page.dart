@@ -4,7 +4,6 @@ import '../../strings/routes.dart';
 import 'master_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
