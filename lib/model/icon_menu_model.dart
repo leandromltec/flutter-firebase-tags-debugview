@@ -1,10 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 
 class IconMenuModel {
-  int idItem;
-  String urlImage;
+  int idIBrand;
+  String nameBrand;
+  String urlImageBand;
 
-  IconMenuModel({@required this.idItem, @required this.urlImage});
+  IconMenuModel(
+      {@required this.idIBrand,
+      @required this.nameBrand,
+      @required this.urlImageBand});
 }

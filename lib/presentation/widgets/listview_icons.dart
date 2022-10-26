@@ -16,11 +16,11 @@ Widget listViewMenuBrands(List<IconMenuModel> listItems) {
 }
 
 
-Widget listViewTeste(List<ProductModel> listItemProducts) {
+Widget listViewProducts(List<ProductModel> listItemProducts) {
   return ListView.builder(
-    scrollDirection: Axis.horizontal,
+    scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      itemCount: listItemProducts.length,
+      itemCount: 1,
       itemBuilder: (context, index) {
          return ProductItem(product: listItemProducts[index]);
         

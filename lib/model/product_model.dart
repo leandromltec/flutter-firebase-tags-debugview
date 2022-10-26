@@ -1,10 +1,17 @@
+import 'package:flutter/material.dart';
 
+class ProductModel {
+  int idBrand;
+  String nameBrand;
+  String nameProduct;
+  String urlImageProduct;
+  double amountProduct;
 
-class ProductModel{
-int idBrand;
-String nameProduct;
-String urlImageProduct;
-
-ProductModel({this.idBrand, this.nameProduct, this.urlImageProduct});
-
+  ProductModel(
+      {@required this.idBrand,
+      @required this.nameBrand,
+      @required this.nameProduct,
+      @required this.urlImageProduct,
+      @required this.amountProduct
+      });
 }
