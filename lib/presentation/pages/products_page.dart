@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_tags_debugivew/injector/injector.dart';
 
 import '../widgets/listview_icons.dart';
-import '../widgets/product_item.dart';
 import 'home_page_presenter.dart';
 import 'master_page.dart';
 
@@ -32,7 +32,7 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   Widget build(BuildContext context) {
     return MasterPage(
-      titleAppBar: 'Produtos',
+      presenter: widget.presenter,
       contentPage: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,18 +42,13 @@ class _ProductsPageState extends State<ProductsPage> {
                   return Container(
                       margin: const EdgeInsets.all(20),
                       height: 70,
-                      child: listViewMenuBrands(list));
+                      child: Expanded(child: listViewMenuBrands(list)));
                 }),
             ValueListenableBuilder(
                 valueListenable: widget.presenter.listCurrentItemsProducts,
                 builder: (BuildContext context, listCurrent, _) {
                   return Container(
-                    child: listViewTeste(listCurrent),
-                    /*children: [
-                      ProductItem(
-                        product: widget.presenter.currentItem.value,
-                      ),
-                    ],*/
+                    child: listViewProducts(listCurrent),
                   );
                 }),
           ],

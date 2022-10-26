@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../strings/routes.dart';
+import 'home_page_presenter.dart';
 import 'master_page.dart';
 
 class HomePage extends StatefulWidget {
+  
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -12,9 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MasterPage(
-        titleAppBar: 'Home',
-        contentPage: Container(
+    return Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(
@@ -30,6 +30,6 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-        ));
+        );
   }
 }
