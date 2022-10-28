@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../colors/colors_pallete.dart';
 import 'home_page_presenter.dart';
 
 class MasterPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _MasterPageState extends State<MasterPage> {
         title: ValueListenableBuilder(
             valueListenable: widget.presenter.titlePageAppBar,
             builder: (BuildContext context, titlePage, _) {
-              return Text(titlePage, style: const TextStyle(color: Color(0xFFFF782A)),
+              return Text(titlePage, style: const TextStyle(color: ColorPalette.primaryColor),
               );
             }),
         backgroundColor: Colors.white,
@@ -28,7 +29,7 @@ class _MasterPageState extends State<MasterPage> {
             onPressed: () => Navigator.of(context).pop(),
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Color(0xFFFF782A),
+              color: ColorPalette.primaryColor,
             )),
       ),
       body: widget.contentPage,

@@ -9,10 +9,13 @@ abstract class ProductsPagePresenter {
   ValueNotifier<List<ProductModel>> listItemsProducts;
   ValueNotifier<Iterable<ProductModel>> listCurrentItemsProducts;
   ValueNotifier<ProductModel> itemSelectedProduct;
+  ValueNotifier<int> itemSelectedSizeNumber;
   void getAllItemsMenu();
   void getAllProducs();
   void getSelectedListProduct(int idBrand);
-  void getSelectedProduct(int idProduct);
+  void getSelectedProductColor(int idProduct);
+  void getSelectedProductNumberSize(int idProduct);
   void init();
+  void initSizeNumber();
   void dispose();
 }
