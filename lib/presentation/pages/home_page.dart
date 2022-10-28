@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../strings/routes.dart';
 import '../colors/colors_pallete.dart';
-import 'home_page_presenter.dart';
-import 'master_page.dart';
 
 class HomePage extends StatefulWidget {
   @override

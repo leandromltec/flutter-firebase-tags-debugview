@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'amount_cart_shopp.dart';
 
-import '../../model/product_model.dart';
 import '../../strings/routes.dart';
-import '../colors/colors_pallete.dart';
+import '../pages/home_page_presenter.dart';
 
 class ProductItem extends StatefulWidget {
-  ProductModel product;
+  final ProductsPagePresenter presenter;
 
-  ProductItem({@required this.product});
+  ProductItem({@required this.presenter});
 
   @override
   State<ProductItem> createState() => _ProductItemState();
@@ -26,55 +26,23 @@ class _ProductItemState extends State<ProductItem> {
             decoration: BoxDecoration(
                 color: const Color(0XFFEEEEEE),
                 borderRadius: BorderRadius.circular(20)),
-            child: Image.asset(widget.product.urlImageProduct),
+            child: Image.asset(
+                widget.presenter.itemSelectedProduct.value.urlImageProduct),
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(right: 20, left: 20),
-          width: MediaQuery.of(context).size.width,
-          height: 50,
-          decoration: BoxDecoration(
-              color: const Color(0xFFFF782A),
-              borderRadius: BorderRadius.circular(20)),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Text(
-                "R\$ " +
-                    widget.product.amountProduct
-                        .toStringAsFixed(2)
-                        .replaceAll('.', ','),
-                style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-            ),
-            Container(
-              height: 40,
-              margin: const EdgeInsets.only(right: 10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: ColorPalette.fontWhiteColor, borderRadius: BorderRadius.circular(20)),
-              child: GestureDetector(
-                onTap: () =>
-                    Navigator.of(context).pushNamed(Routes.productSelectedPage),
-                child: Row(
-                  children: [
-                    const Text("Comprar",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    const Icon(
-                      Icons.shopping_cart,
-                      size: 25,
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ]),
-        )
+            margin: const EdgeInsets.only(right: 20, left: 20),
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            decoration: BoxDecoration(
+                color: const Color(0xFFFF782A),
+                borderRadius: BorderRadius.circular(20)),
+            child: AmountCartShopp(
+              presenter: widget.presenter,
+              onTapCartShopp: () {
+                Navigator.of(context).pushNamed(Routes.productSelectedPage);
+              },
+            ))
       ],
     );
   }

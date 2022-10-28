@@ -48,7 +48,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
   }
 
   @override
-  void getAllItemsMenu() {
+  void getAllBrandsMenu() {
     listItemsMenu.value = [
       IconMenuModel(
           idIBrand: 1,
