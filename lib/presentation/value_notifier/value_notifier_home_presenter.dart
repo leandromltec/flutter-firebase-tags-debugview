@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import '../../model/icon_menu_model.dart';
 import '../../model/product_model.dart';
 import '../pages/home_page_presenter.dart';
 
 class ValueNotifierProductsPresenter implements ProductsPagePresenter {
-  
   @override
   ValueNotifier<String> titlePageAppBar;
 
@@ -18,8 +17,11 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
   @override
   ValueNotifier<Iterable<ProductModel>> listCurrentItemsProducts;
 
-   @override
+  @override
   ValueNotifier<ProductModel> itemSelectedProduct;
+
+  @override
+  ValueNotifier<int> itemSelectedSizeNumber;
 
   @override
   void init() {
@@ -28,6 +30,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
     listItemsProducts = ValueNotifier(null);
     listCurrentItemsProducts = ValueNotifier(null);
     itemSelectedProduct = ValueNotifier(null);
+    itemSelectedSizeNumber = ValueNotifier(0);
   }
 
   @override
@@ -36,37 +39,152 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
     listItemsMenu.dispose();
     listItemsProducts.dispose();
     listCurrentItemsProducts.dispose();
+    itemSelectedProduct.dispose();
+  }
+
+  @override
+  void initSizeNumber() {
+    itemSelectedSizeNumber = ValueNotifier(0);
   }
 
   @override
   void getAllItemsMenu() {
     listItemsMenu.value = [
-      IconMenuModel(idIBrand: 1, nameBrand: 'Nike', urlImageBand: 'assets/images/logos/logo_nike.svg'),
-      IconMenuModel(idIBrand: 2, nameBrand: 'Adidas', urlImageBand: 'assets/images/logos/logo_adidas.svg'),
-      IconMenuModel(idIBrand: 3, nameBrand: 'Puma', urlImageBand: 'assets/images/logos/logo_puma.svg'),
-      IconMenuModel(idIBrand: 4, nameBrand: 'New Balance', urlImageBand: 'assets/images/logos/logo_new_balance.svg'),
-      IconMenuModel(idIBrand: 5, nameBrand: 'Under Armour', urlImageBand: 'assets/images/logos/logo_under_armour.svg'),
-     ];
+      IconMenuModel(
+          idIBrand: 1,
+          nameBrand: 'Nike',
+          urlImageBand: 'assets/images/logos/logo_nike.svg'),
+      IconMenuModel(
+          idIBrand: 2,
+          nameBrand: 'Adidas',
+          urlImageBand: 'assets/images/logos/logo_adidas.svg'),
+      IconMenuModel(
+          idIBrand: 3,
+          nameBrand: 'Puma',
+          urlImageBand: 'assets/images/logos/logo_puma.svg'),
+      IconMenuModel(
+          idIBrand: 4,
+          nameBrand: 'New Balance',
+          urlImageBand: 'assets/images/logos/logo_new_balance.svg'),
+      IconMenuModel(
+          idIBrand: 5,
+          nameBrand: 'Under Armour',
+          urlImageBand: 'assets/images/logos/logo_under_armour.svg'),
+    ];
 
-     titlePageAppBar.value = listItemsMenu.value.first.nameBrand;
+    titlePageAppBar.value = listItemsMenu.value.first.nameBrand;
   }
 
   @override
   void getAllProducs() {
     listItemsProducts.value = [
-      ProductModel(idBrand: 1, nameBrand: 'Nike', nameProduct: 'Nike Green', urlImageProduct: 'assets/images/sneakers/nike_verde.png', amountProduct: 249.90),
-      ProductModel(idBrand: 1, nameBrand: 'Nike', nameProduct: 'Nike Black', urlImageProduct: 'assets/images/sneakers/nike_preto.png' , amountProduct: 249.90),
-      ProductModel(idBrand: 2, nameBrand: 'Adidas', nameProduct: 'Adidas Blue', urlImageProduct: 'assets/images/sneakers/adidas_azul.png', amountProduct: 239.90),
-      ProductModel(idBrand: 2, nameBrand: 'Adidas', nameProduct: 'Adidas White', urlImageProduct: 'assets/images/sneakers/adidas_branco.png', amountProduct: 239.90),
-      ProductModel(idBrand: 3, nameBrand: 'Puma',nameProduct: 'Puma White', urlImageProduct: 'assets/images/sneakers/puma_branco.png', amountProduct: 299.00),
-      ProductModel(idBrand: 3, nameBrand: 'Puma', nameProduct: 'Puma Red', urlImageProduct: 'assets/images/sneakers/puma_vermelho.png', amountProduct: 299.00),
-      ProductModel(idBrand: 4, nameBrand: 'New Balance', nameProduct: 'New Balance Blue', urlImageProduct: 'assets/images/sneakers/tenis_new_balance_azul.png', amountProduct: 199.90),
-      ProductModel(idBrand: 4, nameBrand: 'New Balance', nameProduct: 'New Balance Black', urlImageProduct:'assets/images/sneakers/tenis_preto_new_balance.png', amountProduct: 199.90),
-      ProductModel(idBrand: 5, nameBrand: 'Under Armour', nameProduct: 'Under Armour Black', urlImageProduct: 'assets/images/sneakers/tenis_under_preto.png', amountProduct: 399.00),
-      ProductModel(idBrand: 5, nameBrand: 'Under Armour', nameProduct: 'Under Armour Green', urlImageProduct: 'assets/images/sneakers/tenis_under_verde.png', amountProduct: 399.00),
+      ProductModel(
+          idBrand: 1,
+          idProduct: 10,
+          nameBrand: 'Nike',
+          nameProduct: 'Nike Green',
+          urlImageProduct: 'assets/images/sneakers/nike_verde.png',
+          amountProduct: 249.90,
+          sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
+          colorProduct: Colors.green,
+          selectedColor: true
+          ),
+      ProductModel(
+          idBrand: 1,
+          idProduct: 20,
+          nameBrand: 'Nike',
+          nameProduct: 'Nike Black',
+          urlImageProduct: 'assets/images/sneakers/nike_preto.png',
+          amountProduct: 249.90,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.black),
+      ProductModel(
+          idBrand: 2,
+          idProduct: 30,
+          nameBrand: 'Adidas',
+          nameProduct: 'Adidas Blue',
+          urlImageProduct: 'assets/images/sneakers/adidas_azul.png',
+          amountProduct: 239.90,
+          sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
+          colorProduct: Colors.blue,
+          selectedColor: true
+          ),
+      ProductModel(
+          idBrand: 2,
+          idProduct: 40,
+          nameBrand: 'Adidas',
+          nameProduct: 'Adidas White',
+          urlImageProduct: 'assets/images/sneakers/adidas_branco.png',
+          amountProduct: 239.90,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.white),
+      ProductModel(
+          idBrand: 3,
+          idProduct: 50,
+          nameBrand: 'Puma',
+          nameProduct: 'Puma White',
+          urlImageProduct: 'assets/images/sneakers/puma_branco.png',
+          amountProduct: 299.00,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.black,
+          selectedColor: true
+          ),
+      ProductModel(
+          idBrand: 3,
+          idProduct: 60,
+          nameBrand: 'Puma',
+          nameProduct: 'Puma Red',
+          urlImageProduct: 'assets/images/sneakers/puma_vermelho.png',
+          amountProduct: 299.00,
+          sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
+          colorProduct: Colors.red),
+      ProductModel(
+          idBrand: 4,
+          idProduct: 70,
+          nameBrand: 'New Balance',
+          nameProduct: 'New Balance Blue',
+          urlImageProduct: 'assets/images/sneakers/tenis_new_balance_azul.png',
+          amountProduct: 199.90,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.blue,
+          selectedColor: true
+          ),
+      ProductModel(
+          idBrand: 4,
+          idProduct: 80,
+          nameBrand: 'New Balance',
+          nameProduct: 'New Balance Black',
+          urlImageProduct: 'assets/images/sneakers/tenis_preto_new_balance.png',
+          amountProduct: 199.90,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.black),
+      ProductModel(
+          idBrand: 5,
+          idProduct: 90,
+          nameBrand: 'Under Armour',
+          nameProduct: 'Under Armour Black',
+          urlImageProduct: 'assets/images/sneakers/tenis_under_preto.png',
+          amountProduct: 399.00,
+          sizesProduct: [36, 37, 42],
+          colorProduct: Colors.black,
+          selectedColor: true
+          ),
+      ProductModel(
+          idBrand: 5,
+          idProduct: 100,
+          nameBrand: 'Under Armour',
+          nameProduct: 'Under Armour Green',
+          urlImageProduct: 'assets/images/sneakers/tenis_under_verde.png',
+          amountProduct: 399.00,
+          sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
+          colorProduct: Colors.green),
     ];
+
     listCurrentItemsProducts.value =
         listItemsProducts.value.where((e) => e.idBrand == 1).toList();
+
+    itemSelectedProduct.value = listCurrentItemsProducts.value.first;
+    
   }
 
   @override
@@ -77,10 +195,23 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
     titlePageAppBar.value = listCurrentItemsProducts.value.first.nameBrand;
 
     itemSelectedProduct.value = listCurrentItemsProducts.value.first;
+    
   }
 
   @override
-   void getSelectedProduct(int idProduct) {
-     itemSelectedProduct.value = listCurrentItemsProducts.value.first;
+  void getSelectedProductColor(int idProduct) {
+    listCurrentItemsProducts.value.forEach((element) {
+      element.selectedColor = false;
+    });
+    itemSelectedProduct.value = listCurrentItemsProducts.value
+        .where((e) => e.idProduct == idProduct)
+        .first;
+    itemSelectedProduct.value.selectedColor =
+        !itemSelectedProduct.value.selectedColor;
+  }
+
+  @override
+  void getSelectedProductNumberSize(int numberSize) {
+    itemSelectedSizeNumber.value = numberSize;
   }
 }

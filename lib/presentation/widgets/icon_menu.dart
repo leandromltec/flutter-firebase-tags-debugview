@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_tags_debugivew/injector/injector.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../injector/injector.dart';
 import '../../model/icon_menu_model.dart';
+import '../colors/colors_pallete.dart';
 import '../pages/home_page_presenter.dart';
 
 class IconMenu extends StatefulWidget {
@@ -29,9 +30,9 @@ class _IconMenuState extends State<IconMenu> {
             decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
-                      color: Color(0xFFD6D6D6), spreadRadius: 1, blurRadius: 10)
+                      color: ColorPalette.shadowmenuButtonColor, spreadRadius: 1, blurRadius: 10)
                 ],
-                color: const Color(0xFFEEEEEE),
+                color: ColorPalette.menuButtonColor,
                 borderRadius: BorderRadius.circular(10)),
             width: 80,
             height: 70,

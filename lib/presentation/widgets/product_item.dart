@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../../model/product_model.dart';
 import '../../strings/routes.dart';
+import '../colors/colors_pallete.dart';
 
 class ProductItem extends StatefulWidget {
   ProductModel product;
@@ -54,7 +56,7 @@ class _ProductItemState extends State<ProductItem> {
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                  color: ColorPalette.fontWhiteColor, borderRadius: BorderRadius.circular(20)),
               child: GestureDetector(
                 onTap: () =>
                     Navigator.of(context).pushNamed(Routes.productSelectedPage),
