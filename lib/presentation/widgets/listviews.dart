@@ -19,13 +19,13 @@ Widget listViewMenuBrands(List<IconMenuModel> listItems) {
       });
 }
 
-Widget listViewProducts(List<ProductModel> listItemProducts) {
+Widget listViewProducts(ProductsPagePresenter listItemProducts) {
   return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: 1,
       itemBuilder: (context, index) {
-        return ProductItem(product: listItemProducts[index]);
+        return ProductItem(presenter: listItemProducts);
       });
 }
 
@@ -63,8 +63,7 @@ Widget listViewProductsColors(List<ProductModel> listItemsColors) {
               style: ElevatedButton.styleFrom(
                 primary: listItemsColors[index].colorProduct,
                 shape:  CircleBorder(
-                    side:
-                        BorderSide(width: 3, color:  listItemsColors[index].selectedColor  ?  ColorPalette.primaryColor : ColorPalette.fontWhiteColor)),
+                    side: BorderSide(width: 3, color:  listItemsColors[index].selectedColor  ?  ColorPalette.primaryColor : ColorPalette.fontWhiteColor)),
               ),
             )
           ),

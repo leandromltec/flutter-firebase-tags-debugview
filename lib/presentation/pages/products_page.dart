@@ -18,7 +18,7 @@ class _ProductsPageState extends State<ProductsPage> {
   void initState() {
     super.initState();
     widget.presenter.init();
-    widget.presenter.getAllItemsMenu();
+    widget.presenter.getAllBrandsMenu();
     widget.presenter.getAllProducs();
   }
 
@@ -47,7 +47,7 @@ class _ProductsPageState extends State<ProductsPage> {
                 valueListenable: widget.presenter.listCurrentItemsProducts,
                 builder: (BuildContext context, listCurrent, _) {
                   return Container(
-                    child: listViewProducts(listCurrent),
+                    child: listViewProducts(widget.presenter),
                   );
                 }),
           ],

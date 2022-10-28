@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../colors/colors_pallete.dart';
+import '../widgets/amount_cart_shopp.dart';
 import '../widgets/listviews.dart';
+import '../widgets/title_session.dart';
 import 'home_page_presenter.dart';
 import 'master_page.dart';
 
@@ -39,17 +40,15 @@ class _ProductSelectedPageState extends State<ProductSelectedPage> {
                 child: Image.asset(
                     widget.presenter.itemSelectedProduct.value.urlImageProduct),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10.0),
-                child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Tamanhos:",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: TitleSession(textTitle: "Tamanhos:"),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
@@ -60,15 +59,15 @@ class _ProductSelectedPageState extends State<ProductSelectedPage> {
                         widget.presenter.itemSelectedProduct.value.sizesProduct,
                         widget.presenter)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Cores: ',
-                        style: TextStyle(fontWeight: FontWeight.bold))),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: TitleSession(textTitle: "Cores:"),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
@@ -80,53 +79,11 @@ class _ProductSelectedPageState extends State<ProductSelectedPage> {
                           widget.presenter.listCurrentItemsProducts.value),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
-                margin: const EdgeInsets.only(right: 10, left: 10),
-                width: MediaQuery.of(context).size.width,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: ColorPalette.primaryColor,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          "R\$ " +
-                              widget.presenter.itemSelectedProduct.value
-                                  .amountProduct
-                                  .toStringAsFixed(2)
-                                  .replaceAll('.', ','),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: ColorPalette.fontWhiteColor),
-                        ),
-                      ),
-                      Container(
-                        height: 40,
-                        margin: const EdgeInsets.only(right: 10),
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: ColorPalette.fontWhiteColor,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Row(
-                          children: [
-                            const Text("Comprar",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold)),
-                            const Icon(
-                              Icons.shopping_cart,
-                              size: 25,
-                            ),
-                          ],
-                        ),
-                      )
-                    ]),
+              AmountCartShopp(
+                presenter: widget.presenter,
               )
             ],
           );
