@@ -1,16 +1,17 @@
-# flutter_firebase_tags_debugivew
+# Flutter Tags Firebase (ValueNotifier)
 
-A new Flutter project.
+Projeto exemplo sobre gravação de eventos no Analytics do Firebase utilizando a gerência de estado ValueNotifier.
+Recurso utilizado para Tag (tagueamentos) onde pode-se controlar os eventos como abertura de telas e clique de botões armazenando tais informações no Firebase.
 
-## Getting Started
+Utilizado no projeto recursos como Injector (Injeção de Depedência), árvore de widgets, ValueNotifier e ValueListenableBuilder, Firebase Analytics entre outros.
 
-This project is a starting point for a Flutter application.
+Links abaixo da documentação utilizada no desenvolvimento do projeto:
 
-A few resources to get you started if this is your first Flutter project:
+https://firebase.google.com/docs/analytics/debugview \
+https://medium.com/@avnishnishad/flutter-communication-between-widgets-using-valuenotifier-and-valuelistenablebuilder-b51ef627a58b \
+https://pub.dev/documentation/firebase_analytics/latest/observer/FirebaseAnalyticsObserver-class.html \
+https://flutterbyexample.com/lesson/mixins 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
