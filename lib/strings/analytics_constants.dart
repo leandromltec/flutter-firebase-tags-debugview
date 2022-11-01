@@ -1,3 +1,4 @@
+//Classe responsável pelos textos gravados nos eventos do Firebase
 class AnalyticsConstants {
   //Event constants
   static const String selectContent = 'select_content';
@@ -6,10 +7,9 @@ class AnalyticsConstants {
   static const String btnBack = 'clique:voltar';
 
   static initStateScreenView(String screenRoute) => 'tela:$screenRoute';
-  static clickContentType(String contentType) => 'clique:$contentType'
-      .toLowerCase()
-      .replaceAll(' ', '-');
+  static clickContentType(String contentType) =>
+      'clique:$contentType'.toLowerCase().replaceAll(' ', '-');
 
-  static itemSelectedScreeView(String itemSelected) => ':$itemSelected'.toLowerCase()
-      .replaceAll(' ', '-');
+  static itemSelectedScreeView(String itemSelected) =>
+      ':$itemSelected'.toLowerCase().replaceAll(' ', '-');
 }

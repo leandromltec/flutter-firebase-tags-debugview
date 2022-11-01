@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_tags_debugivew/strings/analytics_constants.dart';
 
+import '../../strings/analytics_constants.dart';
 import '../../strings/routes.dart';
 import '../ui/analytics_mixin.dart';
 import '../widgets/amount_cart_shopp.dart';
@@ -12,7 +12,8 @@ import 'master_page.dart';
 class ProductSelectedPage extends StatefulWidget {
   final ProductsPagePresenter presenter;
 
-  ProductSelectedPage({@required this.presenter});
+  // ignore: use_key_in_widget_constructors
+  const ProductSelectedPage({@required this.presenter});
 
   @override
   State<ProductSelectedPage> createState() => _ProductSelectedPageState();
@@ -24,6 +25,7 @@ class _ProductSelectedPageState extends State<ProductSelectedPage>
   void initState() {
     super.initState();
     widget.presenter.initSizeNumber();
+    //Registra screenView no Firebase Analytics
     screenViewRegister(
         screenRoute: Routes.productSelectedPage +
             AnalyticsConstants.itemSelectedScreeView(
@@ -52,8 +54,8 @@ class _ProductSelectedPageState extends State<ProductSelectedPage>
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+              const Padding(
+                padding: EdgeInsets.only(left: 10.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TitleSession(textTitle: "Tamanhos:"),
@@ -61,7 +63,7 @@ class _ProductSelectedPageState extends State<ProductSelectedPage>
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Container(
+                child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: listViewProductsSize(
@@ -71,8 +73,8 @@ class _ProductSelectedPageState extends State<ProductSelectedPage>
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding:  EdgeInsets.only(left: 10),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TitleSession(textTitle: "Cores:"),
@@ -80,7 +82,7 @@ class _ProductSelectedPageState extends State<ProductSelectedPage>
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Container(
+                child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: Expanded(

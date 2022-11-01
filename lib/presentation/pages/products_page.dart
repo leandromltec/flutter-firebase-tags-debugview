@@ -10,7 +10,8 @@ import 'master_page.dart';
 class ProductsPage extends StatefulWidget {
   final ProductsPagePresenter presenter;
 
-  ProductsPage({@required this.presenter});
+  // ignore: use_key_in_widget_constructors
+  const ProductsPage({@required this.presenter});
 
   @override
   State<ProductsPage> createState() => _ProductsPageState();
@@ -23,6 +24,7 @@ class _ProductsPageState extends State<ProductsPage> with AnalyticsMixin {
     widget.presenter.init();
     widget.presenter.getAllBrandsMenu();
     widget.presenter.getAllProducs();
+    //Registra screenView no Firebase Analytics
     screenViewRegister(
         screenRoute: Routes.productsPage +
             AnalyticsConstants.itemSelectedScreeView(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Definição das cores principais do app
+
 class ColorPalette {
   ColorPalette();
 

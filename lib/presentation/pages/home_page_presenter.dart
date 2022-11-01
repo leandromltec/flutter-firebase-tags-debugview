@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../../model/icon_menu_model.dart';
 import '../../model/product_model.dart';
 
+//Interface com variáveis ValueNotifier e métodos do Presenter
 abstract class ProductsPagePresenter {
   ValueNotifier<String> titlePageAppBar;
   ValueNotifier<List<IconMenuModel>> listItemsMenu;

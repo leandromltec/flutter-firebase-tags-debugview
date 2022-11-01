@@ -53,23 +53,23 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
       IconMenuModel(
           idIBrand: 1,
           nameBrand: 'Nike',
-          urlImageBand: 'assets/images/logos/logo_nike.svg'),
+          urlImageBrand: 'assets/images/logos/logo_nike.svg'),
       IconMenuModel(
           idIBrand: 2,
           nameBrand: 'Adidas',
-          urlImageBand: 'assets/images/logos/logo_adidas.svg'),
+          urlImageBrand: 'assets/images/logos/logo_adidas.svg'),
       IconMenuModel(
           idIBrand: 3,
           nameBrand: 'Puma',
-          urlImageBand: 'assets/images/logos/logo_puma.svg'),
+          urlImageBrand: 'assets/images/logos/logo_puma.svg'),
       IconMenuModel(
           idIBrand: 4,
           nameBrand: 'New Balance',
-          urlImageBand: 'assets/images/logos/logo_new_balance.svg'),
+          urlImageBrand: 'assets/images/logos/logo_new_balance.svg'),
       IconMenuModel(
           idIBrand: 5,
           nameBrand: 'Under Armour',
-          urlImageBand: 'assets/images/logos/logo_under_armour.svg'),
+          urlImageBrand: 'assets/images/logos/logo_under_armour.svg'),
     ];
 
     titlePageAppBar.value = listItemsMenu.value.first.nameBrand;
@@ -215,9 +215,10 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
 
   @override
   void getSelectedProductColor(int idProduct) {
-    listCurrentItemsProducts.value.forEach((element) {
-      element.selectedColor = false;
-    });
+    for(ProductModel itemCurrent in listCurrentItemsProducts.value){
+      itemCurrent.selectedColor = false;
+    }
+    
     itemSelectedProduct.value = listCurrentItemsProducts.value
         .where((e) => e.idProduct == idProduct)
         .first;

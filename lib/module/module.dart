@@ -10,6 +10,7 @@ import '../strings/routes.dart';
 import 'factory.dart';
 import 'module_interface.dart';
 
+//Módulo para definição de routas de telas e registro de serviços
 class ModuleTags implements ModuleInterface {
   @override
   Map<String, WidgetBuilder> routes() {

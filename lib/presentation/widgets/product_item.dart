@@ -7,7 +7,8 @@ import '../pages/home_page_presenter.dart';
 class ProductItem extends StatefulWidget {
   final ProductsPagePresenter presenter;
 
-  ProductItem({@required this.presenter});
+  // ignore: use_key_in_widget_constructors
+  const ProductItem({@required this.presenter});
 
   @override
   State<ProductItem> createState() => _ProductItemState();
