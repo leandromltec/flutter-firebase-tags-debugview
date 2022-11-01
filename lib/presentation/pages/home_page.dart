@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../../strings/routes.dart';
 import '../colors/colors_pallete.dart';
+import '../ui/analytics_mixin.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget{
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AnalyticsMixin{
+
+  @override
+  void initState() {
+    super.initState();
+    screenViewRegister(screenRoute: Routes.homePage);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

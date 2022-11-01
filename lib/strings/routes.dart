@@ -1,7 +1,7 @@
 class Routes {
   Routes._();
 
-  static const String homePage = 'home-page';
-  static const String productsPage = 'products-page';
-  static const String productSelectedPage = 'products-selected-page';
+  static const String homePage = 'home';
+  static const String productsPage = 'marca';
+  static const String productSelectedPage = 'produto-selecionado';
 }

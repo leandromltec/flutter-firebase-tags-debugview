@@ -9,6 +9,7 @@ class ProductModel {
   double amountProduct;
   List<int> sizesProduct;
   Color colorProduct;
+  String colorNameProduct;
   bool selectedColor;
   int selectedSizeNumber;
 
@@ -21,6 +22,7 @@ class ProductModel {
       @required this.amountProduct,
       @required this.sizesProduct,
       @required this.colorProduct,
+      @required this.colorNameProduct,
       this.selectedColor = false,
       this.selectedSizeNumber = 0});
 }
