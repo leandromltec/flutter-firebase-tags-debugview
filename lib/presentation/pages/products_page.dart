@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../strings/analytics_constants.dart';
+import '../../strings/routes.dart';
+import '../ui/analytics_mixin.dart';
 import '../widgets/listviews.dart';
 import 'home_page_presenter.dart';
 import 'master_page.dart';
@@ -13,13 +16,17 @@ class ProductsPage extends StatefulWidget {
   State<ProductsPage> createState() => _ProductsPageState();
 }
 
-class _ProductsPageState extends State<ProductsPage> {
+class _ProductsPageState extends State<ProductsPage> with AnalyticsMixin {
   @override
   void initState() {
     super.initState();
     widget.presenter.init();
     widget.presenter.getAllBrandsMenu();
     widget.presenter.getAllProducs();
+    screenViewRegister(
+        screenRoute: Routes.productsPage +
+            AnalyticsConstants.itemSelectedScreeView(
+                widget.presenter.itemSelectedProduct.value.nameBrand));
   }
 
   @override
@@ -31,6 +38,7 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   Widget build(BuildContext context) {
     return MasterPage(
+      routePage: Routes.productsPage,
       presenter: widget.presenter,
       contentPage: SingleChildScrollView(
         child: Column(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_tags_debugivew/strings/analytics_constants.dart';
 
+import '../../strings/routes.dart';
+import '../ui/analytics_mixin.dart';
 import '../widgets/amount_cart_shopp.dart';
 import '../widgets/listviews.dart';
 import '../widgets/title_session.dart';
@@ -15,16 +18,22 @@ class ProductSelectedPage extends StatefulWidget {
   State<ProductSelectedPage> createState() => _ProductSelectedPageState();
 }
 
-class _ProductSelectedPageState extends State<ProductSelectedPage> {
+class _ProductSelectedPageState extends State<ProductSelectedPage>
+    with AnalyticsMixin {
   @override
   void initState() {
     super.initState();
     widget.presenter.initSizeNumber();
+    screenViewRegister(
+        screenRoute: Routes.productSelectedPage +
+            AnalyticsConstants.itemSelectedScreeView(
+                widget.presenter.itemSelectedProduct.value.nameProduct));
   }
 
   @override
   Widget build(BuildContext context) {
     return MasterPage(
+      routePage: Routes.productSelectedPage,
       presenter: widget.presenter,
       contentPage: ValueListenableBuilder(
         valueListenable: widget.presenter.itemSelectedProduct,

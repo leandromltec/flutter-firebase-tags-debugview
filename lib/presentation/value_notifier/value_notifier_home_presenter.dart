@@ -87,6 +87,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           amountProduct: 249.90,
           sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
           colorProduct: Colors.green,
+          colorNameProduct: 'verde',
           selectedColor: true
           ),
       ProductModel(
@@ -97,7 +98,9 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           urlImageProduct: 'assets/images/sneakers/nike_preto.png',
           amountProduct: 249.90,
           sizesProduct: [36, 37, 42],
-          colorProduct: Colors.black),
+          colorProduct: Colors.black,
+          colorNameProduct: 'preto',
+          ),
       ProductModel(
           idBrand: 2,
           idProduct: 30,
@@ -107,6 +110,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           amountProduct: 239.90,
           sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
           colorProduct: Colors.blue,
+          colorNameProduct: 'azul',
           selectedColor: true
           ),
       ProductModel(
@@ -117,7 +121,9 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           urlImageProduct: 'assets/images/sneakers/adidas_branco.png',
           amountProduct: 239.90,
           sizesProduct: [36, 37, 42],
-          colorProduct: Colors.white),
+          colorProduct: Colors.white,
+          colorNameProduct: 'branco',
+          ),
       ProductModel(
           idBrand: 3,
           idProduct: 50,
@@ -127,6 +133,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           amountProduct: 299.00,
           sizesProduct: [36, 37, 42],
           colorProduct: Colors.black,
+          colorNameProduct: 'black',
           selectedColor: true
           ),
       ProductModel(
@@ -137,7 +144,9 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           urlImageProduct: 'assets/images/sneakers/puma_vermelho.png',
           amountProduct: 299.00,
           sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
-          colorProduct: Colors.red),
+          colorProduct: Colors.red,
+          colorNameProduct: 'vermelho',
+          ),
       ProductModel(
           idBrand: 4,
           idProduct: 70,
@@ -147,6 +156,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           amountProduct: 199.90,
           sizesProduct: [36, 37, 42],
           colorProduct: Colors.blue,
+          colorNameProduct: 'azul',
           selectedColor: true
           ),
       ProductModel(
@@ -157,7 +167,9 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           urlImageProduct: 'assets/images/sneakers/tenis_preto_new_balance.png',
           amountProduct: 199.90,
           sizesProduct: [36, 37, 42],
-          colorProduct: Colors.black),
+          colorProduct: Colors.black,
+          colorNameProduct: 'preto',
+          ),
       ProductModel(
           idBrand: 5,
           idProduct: 90,
@@ -167,6 +179,7 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           amountProduct: 399.00,
           sizesProduct: [36, 37, 42],
           colorProduct: Colors.black,
+          colorNameProduct: 'preto',
           selectedColor: true
           ),
       ProductModel(
@@ -177,7 +190,9 @@ class ValueNotifierProductsPresenter implements ProductsPagePresenter {
           urlImageProduct: 'assets/images/sneakers/tenis_under_verde.png',
           amountProduct: 399.00,
           sizesProduct: [32, 34, 36, 37, 39, 40, 42, 44],
-          colorProduct: Colors.green),
+          colorProduct: Colors.green,
+          colorNameProduct: 'verde',
+          ),
     ];
 
     listCurrentItemsProducts.value =

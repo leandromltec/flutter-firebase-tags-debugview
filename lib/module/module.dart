@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../injector/injector.dart';
+import '../injector/services/analytics/analytics_services.dart';
 import '../presentation/pages/home_page.dart';
 import '../presentation/pages/home_page_presenter.dart';
 import '../strings/routes.dart';
@@ -23,6 +24,6 @@ class ModuleTags implements ModuleInterface {
   @override
   FutureOr<void> registerServices(Injector injector) async {
     injector.registerLazySingleton<ProductsPagePresenter>(makeProducts());
-   
+    injector.registerLazySingleton(() => AnalyticsService());
   }
 }
