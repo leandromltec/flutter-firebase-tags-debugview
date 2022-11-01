@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> with AnalyticsMixin{
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
-                        'assets/images/background/background_nike.jpeg'),
+                        'assets/images/background/background_splash.jpeg'),
                     fit: BoxFit.cover)),
           ),
           Padding(
