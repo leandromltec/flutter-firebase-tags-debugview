@@ -1,13 +1,15 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 import '../colors/colors_pallete.dart';
 import '../pages/home_page_presenter.dart';
 
 class AmountCartShopp extends StatefulWidget {
-final ProductsPagePresenter presenter;
-final Function onTapCartShopp;
+  final ProductsPagePresenter presenter;
+  final Function onTapCartShopp;
 
-  AmountCartShopp({@required this.presenter, this.onTapCartShopp});
+  const AmountCartShopp({@required this.presenter, this.onTapCartShopp});
 
   @override
   State<AmountCartShopp> createState() => _AmountCartShoppState();
@@ -45,14 +47,15 @@ class _AmountCartShoppState extends State<AmountCartShopp> {
               color: ColorPalette.fontWhiteColor,
               borderRadius: BorderRadius.circular(20)),
           child: GestureDetector(
-            onTap: (){
-                widget.onTapCartShopp();
+            onTap: () {
+              widget.onTapCartShopp();
             },
             child: Row(
               children: [
                 const Text("Comprar",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                Icon(
+                    style:  TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold)),
+                const Icon(
                   Icons.shopping_cart,
                   size: 25,
                 ),

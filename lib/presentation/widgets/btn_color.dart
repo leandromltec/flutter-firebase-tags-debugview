@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_tags_debugivew/strings/analytics_constants.dart';
 
 import '../../injector/injector.dart';
 import '../../model/product_model.dart';
+import '../../strings/analytics_constants.dart';
 import '../colors/colors_pallete.dart';
 import '../pages/home_page_presenter.dart';
 import '../ui/analytics_mixin.dart';
 
 class ButtonColorProduct extends StatefulWidget {
-  ProductModel itemProduct;
+  final ProductModel itemProduct;
 
-  ButtonColorProduct({this.itemProduct});
+  // ignore: use_key_in_widget_constructors
+  const ButtonColorProduct({this.itemProduct});
 
   @override
   State<ButtonColorProduct> createState() => _ButtonColorProductState();
@@ -21,6 +22,7 @@ class _ButtonColorProductState extends State<ButtonColorProduct>
   @override
   void initState() {
     super.initState();
+     //Grava o evento ao carregar a tela da cor já selecionada (cor padrão)
     if(widget.itemProduct.selectedColor){
     clickRegisterEvent(
         'menu-cor',
@@ -33,11 +35,13 @@ class _ButtonColorProductState extends State<ButtonColorProduct>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(6.0),
-      child: Container(
+      child: SizedBox(
           width: 30,
           height: 30,
           child: ElevatedButton(
+            child: null,
             onPressed: () {
+              //Grava o evento no clique de uma cor selecionada
               clickRegisterEvent(
                   'menu-cor',
                   AnalyticsConstants.clickContentType(

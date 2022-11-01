@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../colors/colors_pallete.dart';
 
 class TitleSession extends StatelessWidget {
-  String textTitle;
+  final String textTitle;
 
-  TitleSession({@required this.textTitle});
+  // ignore: use_key_in_widget_constructors
+  const TitleSession({@required this.textTitle});
 
   @override
   Widget build(BuildContext context) {

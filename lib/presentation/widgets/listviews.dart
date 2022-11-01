@@ -9,6 +9,7 @@ import 'icon_menu.dart';
 import 'number_size_product.dart';
 import 'product_item.dart';
 
+//Listview do menu de marcas ta tela principal
 Widget listViewMenuBrands(List<IconMenuModel> listItems) {
   return ListView.builder(
       scrollDirection: Axis.horizontal,
@@ -19,6 +20,7 @@ Widget listViewMenuBrands(List<IconMenuModel> listItems) {
       });
 }
 
+//Listview do produtos
 Widget listViewProducts(ProductsPagePresenter listItemProducts) {
   return ListView.builder(
       scrollDirection: Axis.vertical,
@@ -29,6 +31,7 @@ Widget listViewProducts(ProductsPagePresenter listItemProducts) {
       });
 }
 
+//Listview de menu de tamanho do produto
 Widget listViewProductsSize(List<int> listItemsNumberSizeProduct,
     ProductsPagePresenter presenterProduct) {
   return ListView.builder(
@@ -49,6 +52,7 @@ Widget listViewProductsSize(List<int> listItemsNumberSizeProduct,
       });
 }
 
+//Listview de menu de cores do produto
 Widget listViewProductsColors(List<ProductModel> listItemsColors) {
   return ListView.builder(
       scrollDirection: Axis.horizontal,

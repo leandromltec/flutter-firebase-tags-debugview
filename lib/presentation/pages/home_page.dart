@@ -4,6 +4,7 @@ import '../../strings/routes.dart';
 import '../colors/colors_pallete.dart';
 import '../ui/analytics_mixin.dart';
 
+// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget{
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> with AnalyticsMixin{
   @override
   void initState() {
     super.initState();
+    
     screenViewRegister(screenRoute: Routes.homePage);
   }
 
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> with AnalyticsMixin{
           ),
           Padding(
             padding: const EdgeInsets.all(40.0),
-            child: Container(
+            child: SizedBox(
               width: 500,
               height: 50,
               child: ElevatedButton(

@@ -4,12 +4,14 @@ import '../colors/colors_pallete.dart';
 import '../ui/analytics_mixin.dart';
 import 'home_page_presenter.dart';
 
+//Página padrão que já defini AppBar e recebe como parâmetro um Widget
 class MasterPage extends StatefulWidget {
   final ProductsPagePresenter presenter;
   final Widget contentPage;
   final String routePage;
 
-  MasterPage({@required this.presenter, @required this.contentPage, this.routePage});
+  // ignore: use_key_in_widget_constructors
+  const MasterPage({@required this.presenter, @required this.contentPage, this.routePage});
 
   @override
   State<MasterPage> createState() => _MasterPageState();

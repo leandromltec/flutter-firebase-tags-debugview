@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Model para os produtos
 class ProductModel {
   int idBrand;
   int idProduct;

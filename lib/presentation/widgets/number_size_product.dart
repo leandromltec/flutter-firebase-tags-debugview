@@ -10,6 +10,7 @@ class NumberSizeProduct extends StatefulWidget {
   final Function onTapNumberSize;
   final ProductsPagePresenter presenter;
 
+  // ignore: use_key_in_widget_constructors
   const NumberSizeProduct(
       {this.numberSize, this.onTapNumberSize, this.presenter});
 
@@ -26,6 +27,7 @@ class _NumberSizeProductState extends State<NumberSizeProduct>
         builder: (BuildContext context, item, _) {
           return InkWell(
             onTap: () {
+               //Grava o evento no clique de um tamanho selecionado
               clickRegisterEvent(
                   'menu-tamamho',
                   AnalyticsConstants.clickContentType(

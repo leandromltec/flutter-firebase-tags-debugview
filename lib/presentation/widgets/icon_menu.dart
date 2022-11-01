@@ -11,7 +11,8 @@ import '../ui/analytics_mixin.dart';
 class IconMenu extends StatefulWidget {
   final IconMenuModel iconMenu;
 
-  IconMenu({@required this.iconMenu});
+  // ignore: use_key_in_widget_constructors
+  const IconMenu({@required this.iconMenu});
 
   @override
   State<IconMenu> createState() => _IconMenuState();
@@ -24,6 +25,7 @@ class _IconMenuState extends State<IconMenu> with AnalyticsMixin {
       padding: const EdgeInsets.all(10.0),
       child: InkWell(
         onTap: () {
+            //Grava o evento no clique de uma marca no menu
           clickRegisterEvent('menu-marca',
               AnalyticsConstants.clickContentType(widget.iconMenu.nameBrand));
           Injector.instance
@@ -42,7 +44,7 @@ class _IconMenuState extends State<IconMenu> with AnalyticsMixin {
                 borderRadius: BorderRadius.circular(10)),
             width: 80,
             height: 70,
-            child: SvgPicture.asset(widget.iconMenu.urlImageBand)),
+            child: SvgPicture.asset(widget.iconMenu.urlImageBrand)),
       ),
     );
   }
