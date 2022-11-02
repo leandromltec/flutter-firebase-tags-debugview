@@ -1,9 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_firebase_tags_debugivew/injector/injector.dart';
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
 
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+
+import '../injector/injector.dart';
 import 'module_interface.dart';
 import 'module_manager_interface.dart';
-import 'dart:developer';
 
 class ModuleManager implements ModuleManagerInterface {
   Map<String, WidgetBuilder> _routes;

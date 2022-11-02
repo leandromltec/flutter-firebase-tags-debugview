@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 //Classe responsável pelos textos gravados nos eventos do Firebase
 class AnalyticsConstants {
   //Event constants

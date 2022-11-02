@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 import '../injector/injector.dart';
 import '../presentation/pages/home_page_presenter.dart';
 import '../presentation/pages/product_selected_page.dart';

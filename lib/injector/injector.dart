@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 import 'injector_interface.dart';
 import 'package:get_it/get_it.dart';
 

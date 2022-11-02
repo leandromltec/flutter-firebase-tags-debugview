@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 import 'package:firebase_analytics/firebase_analytics.dart';
 import '../../../model/tag_model.dart';
 
