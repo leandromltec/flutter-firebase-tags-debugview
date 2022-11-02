@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +13,7 @@ import 'module/module_manager_interface.dart';
 import 'presentation/pages/home_page.dart';
 
 void main() async {
-  //Interage com o mecanimos Flutter e chama o código nativo para permitir iniciar o Firebase
+  //Interage com o mecanismos Flutter e chama o código nativo para permitir iniciar o Firebase
   WidgetsFlutterBinding.ensureInitialized();
   //Inicia o Firebase conforme a plataforma atual
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);

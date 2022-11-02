@@ -13,5 +13,5 @@ https://pub.dev/documentation/firebase_analytics/latest/observer/FirebaseAnalyti
 https://flutterbyexample.com/lesson/mixins 
 
 
-
+![til](./assets/img/debugview.gif)
 

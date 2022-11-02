@@ -1,3 +1,7 @@
+/* Desenvolvido por Leandro M. Loureiro */
+/* Github - https://github.com/leandromltec */
+/* Linkedin - https://www.linkedin.com/in/leandro-loureiro-dev/ */
+
 import 'package:flutter/material.dart';
 
 import '../../strings/routes.dart';
@@ -30,7 +34,7 @@ class _HomePageState extends State<HomePage> with AnalyticsMixin{
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
-                        'assets/images/background/background_nike.jpeg'),
+                        'assets/images/background/background_splash.jpeg'),
                     fit: BoxFit.cover)),
           ),
           Padding(
